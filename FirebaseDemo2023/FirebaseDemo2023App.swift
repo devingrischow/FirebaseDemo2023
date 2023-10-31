@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct FirebaseDemo2023App: App {
+    
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AddDataToCloudView()
         }
     }
+    
+    
+    
 }
