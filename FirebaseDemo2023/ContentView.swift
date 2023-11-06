@@ -19,6 +19,7 @@ struct ContentView: View {
     @State private var email:String = ""
     @State private var password:String = ""
     
+    @State private var uuID = "117"
     
     var body: some View {
         VStack {
@@ -26,6 +27,11 @@ struct ContentView: View {
             Text("Welcome To The Basic Signup and Login Demonstration!")
                 //sets the text style to be like a poem, Centered
                 .multilineTextAlignment(.center)
+            
+            //default value is
+            
+            
+            Text(uuID)
             
             TextField("Email", text: $email)
             //Text Field Modifiers
@@ -69,6 +75,8 @@ struct ContentView: View {
                     .frame(width: 100)
                     .background(.orange)
                     .cornerRadius(15)
+                
+                
             }
             
             
@@ -93,6 +101,11 @@ struct ContentView: View {
                 
                 //Here if we wanted to we could present a popup to the user explaining a error occured and they cant be logged it.
             }
+            
+            print("Logged in!")
+            uuID = Auth.auth().currentUser?.uid ?? "nope"
+            
+            
             
         }
         

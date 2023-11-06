@@ -1,44 +1,44 @@
-//
-//  AddDataToCloud.swift
-//  FirebaseDemo2023
-//
-//  Created by Devin Grischow on 10/30/23.
-//
 
 import SwiftUI
 
-struct AddDataToCloudView: View {
+struct AddDataToCloudView:View{
+    
     @EnvironmentObject var d:DataModels
     
-    @State private var dataEntry = ""
+    @State private var entry = ""
     
-    var body: some View {
+    var body: some View{
         
         VStack{
             
-            TextField("Some Cool Data!", text: $dataEntry)
             
+            TextField("Restaurant To Add: ", text: $entry)
             
             Button{
+                
                 Task{
-                    await d.addData(dataToAdd:dataEntry)
+                    await d.addData(dataToAdd:entry)
                 }
+                
             }label: {
-                Text("Howdy!")
-
+                Text("Submit!")
             }
             
+            
         }
+        
+        
+        
         
     }
     
     
-    
-    
 }
 
-struct AddDataToCloud_Previews: PreviewProvider {
-    static var previews: some View {
+
+
+struct AddDataToCloud_Previews:PreviewProvider{
+    static var previews: some View{
         AddDataToCloudView().environmentObject(DataModels())
     }
 }

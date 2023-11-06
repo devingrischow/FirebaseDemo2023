@@ -2,40 +2,38 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
+
+
 class DataModels:ObservableObject{
     
     
     
     
-    
-    
-    
     func addData(dataToAdd:String) async{
+        
         let db = Firestore.firestore()
         
         
         
-        //add data to the collection...
         do{
-            //create a structure for the food
+            //Restuarunt to add....
+            let rToAdd = [
+                "New Restaurant":dataToAdd,
+                "Resturant Locale": "Chicago"
+                
+            ]
             
-            let favFood = ["FavoriteFood":dataToAdd]
+            try await db.collection("Restaurants").document(dataToAdd).setData(rToAdd)
             
-            try await db.collection("FavoriteFoods").document(dataToAdd).setData(favFood)
             
             
         }catch{
-            print(error.localizedDescription, "An Error has occured")
+            print(error.localizedDescription, "A Error Occured when setting Data")
         }
+        
+        
+        
     }
     
     
-    
-    
-    
 }
-
-
-
-
-

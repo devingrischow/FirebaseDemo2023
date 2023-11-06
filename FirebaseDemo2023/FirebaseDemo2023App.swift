@@ -15,7 +15,7 @@ struct FirebaseDemo2023App: App {
     
     var body: some Scene {
         WindowGroup {
-            AddDataToCloudView()
+            ContentView()
         }
     }
     
