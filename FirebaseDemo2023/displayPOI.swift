@@ -34,11 +34,11 @@ struct displayPOI: View {
         }.onAppear{
             //when the screen loads, set up everything
             Task{
-                let beanPOIdata = await fireBaseUtility.getDataFromName(pointName: "The Bean")
+                let beanPOIdata = await fireBaseUtility.getPOIDataFromName(pointName: "The Bean")
                 beanPOI = PointOfInterest(dictionary: beanPOIdata)
                 //redeclare POI with proper data
                 
-                let tonyPOIdata = await fireBaseUtility.getDataFromName(pointName: "Tonys Cafe")
+                let tonyPOIdata = await fireBaseUtility.getPOIDataFromName(pointName: "Tonys Cafe")
                 tonysPOI = PointOfInterest(dictionary: tonyPOIdata)
                 
                 name = tonysPOI!.name

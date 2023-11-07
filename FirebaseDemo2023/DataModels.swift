@@ -8,7 +8,7 @@ class DataModels:ObservableObject{
     
     
     
-    
+    //Basic read data from firebase By ID
     func getDocumentFromFirebase(id:String) async -> [String:Any]{
         
         let db = Firestore.firestore()
@@ -31,7 +31,36 @@ class DataModels:ObservableObject{
     }
     
     
+    //add basic Data To Firebase
     
+    func addData(dataToAdd:String) async{
+        
+        let db = Firestore.firestore()
+        
+        
+        
+        do{
+            //Restuarunt to add....
+            let rToAdd = [
+                "New Restaurant":dataToAdd,
+                "Resturant Locale": "Chicago"
+                
+            ]
+            
+            try await db.collection("Restaurants").document(dataToAdd).setData(rToAdd)
+            
+            
+            
+        }catch{
+            print(error.localizedDescription, "A Error Occured when setting Data")
+        }
+        
+        
+        
+    }
+    
+    
+    //Add A New Point of Interest to Firebase
     func addPOItoFirebase(name:String, desc:String,type:String,long:String,lat:String){
         
         let db = Firestore.firestore()
@@ -63,7 +92,10 @@ class DataModels:ObservableObject{
         
     }
     
-    func getDataFromName(pointName:String) async -> [String:Any]{
+    
+    //get a Point of documents data from
+    
+    func getPOIDataFromName(pointName:String) async -> [String:Any]{
         
         let fs = Firestore.firestore()
         
@@ -98,31 +130,7 @@ class DataModels:ObservableObject{
     }
     
     
-    func addData(dataToAdd:String) async{
-        
-        let db = Firestore.firestore()
-        
-        
-        
-        do{
-            //Restuarunt to add....
-            let rToAdd = [
-                "New Restaurant":dataToAdd,
-                "Resturant Locale": "Chicago"
-                
-            ]
-            
-            try await db.collection("Restaurants").document(dataToAdd).setData(rToAdd)
-            
-            
-            
-        }catch{
-            print(error.localizedDescription, "A Error Occured when setting Data")
-        }
-        
-        
-        
-    }
+    
     
     
 }
