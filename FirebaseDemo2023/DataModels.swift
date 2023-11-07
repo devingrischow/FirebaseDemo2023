@@ -7,6 +7,31 @@ import FirebaseFirestore
 class DataModels:ObservableObject{
     
     
+    
+    
+    func getDocumentFromFirebase(id:String) async -> [String:Any]{
+        
+        let db = Firestore.firestore()
+        
+        //data variable to return
+        var data:[String:Any] = [:]
+        do{
+            
+            let dataDoc:DocumentSnapshot = try await db.collection("Restaurants").document(id).getDocument()
+            
+            let documentData = dataDoc.data()
+            data = documentData!
+            
+        }catch{
+            print(error.localizedDescription, "Error Retriving Foods")
+        }
+        
+        return data
+        
+    }
+    
+    
+    
     func addPOItoFirebase(name:String, desc:String,type:String,long:String,lat:String){
         
         let db = Firestore.firestore()

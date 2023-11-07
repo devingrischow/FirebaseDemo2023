@@ -10,6 +10,7 @@
 		23258C8A2AF980B500EE05C9 /* PointOfInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23258C892AF980B500EE05C9 /* PointOfInterest.swift */; };
 		23258C8C2AF9D12F00EE05C9 /* addPOIToFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23258C8B2AF9D12F00EE05C9 /* addPOIToFirebase.swift */; };
 		23258C8E2AF9D15D00EE05C9 /* displayPOI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23258C8D2AF9D15D00EE05C9 /* displayPOI.swift */; };
+		23258C902AF9EE5200EE05C9 /* basicReadScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23258C8F2AF9EE5200EE05C9 /* basicReadScreen.swift */; };
 		233C00782AEB1E7400F17239 /* FirebaseDemo2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C00772AEB1E7400F17239 /* FirebaseDemo2023App.swift */; };
 		233C007A2AEB1E7400F17239 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233C00792AEB1E7400F17239 /* ContentView.swift */; };
 		233C007C2AEB1E7600F17239 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 233C007B2AEB1E7600F17239 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		23258C892AF980B500EE05C9 /* PointOfInterest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointOfInterest.swift; sourceTree = "<group>"; };
 		23258C8B2AF9D12F00EE05C9 /* addPOIToFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPOIToFirebase.swift; sourceTree = "<group>"; };
 		23258C8D2AF9D15D00EE05C9 /* displayPOI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayPOI.swift; sourceTree = "<group>"; };
+		23258C8F2AF9EE5200EE05C9 /* basicReadScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicReadScreen.swift; sourceTree = "<group>"; };
 		233C00742AEB1E7400F17239 /* FirebaseDemo2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseDemo2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		233C00772AEB1E7400F17239 /* FirebaseDemo2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseDemo2023App.swift; sourceTree = "<group>"; };
 		233C00792AEB1E7400F17239 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				23258C892AF980B500EE05C9 /* PointOfInterest.swift */,
 				23258C8B2AF9D12F00EE05C9 /* addPOIToFirebase.swift */,
 				23258C8D2AF9D15D00EE05C9 /* displayPOI.swift */,
+				23258C8F2AF9EE5200EE05C9 /* basicReadScreen.swift */,
 			);
 			path = FirebaseDemo2023;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2368D8CE2AF03B6700394742 /* AddDataToCloudView.swift in Sources */,
+				23258C902AF9EE5200EE05C9 /* basicReadScreen.swift in Sources */,
 				23258C8E2AF9D15D00EE05C9 /* displayPOI.swift in Sources */,
 				23258C8A2AF980B500EE05C9 /* PointOfInterest.swift in Sources */,
 				233C009B2AEB23DF00F17239 /* AppDelegate.swift in Sources */,
