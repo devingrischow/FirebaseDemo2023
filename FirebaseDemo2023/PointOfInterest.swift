@@ -6,7 +6,8 @@
 //
 
 import Foundation
-
+import Firebase
+import FirebaseFirestore
 
 class PointOfInterest:ObservableObject{
     
@@ -60,17 +61,10 @@ class PointOfInterest:ObservableObject{
 
 
     }
-    
-    
-    
-    
+   
     
     
 }
 
 
-//global function:
 
-func readDataDataFromKey(){
-    print("howday")
-}

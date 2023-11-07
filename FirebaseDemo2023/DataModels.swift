@@ -7,6 +7,70 @@ import FirebaseFirestore
 class DataModels:ObservableObject{
     
     
+    func addPOItoFirebase(name:String, desc:String,type:String,long:String,lat:String){
+        
+        let db = Firestore.firestore()
+        
+        
+            
+            //create structure for firebase
+            
+            
+            let newPoi = [
+                "name":name,
+                "description":desc,
+                "type":type,
+                "longitude":(Double(long.replacingOccurrences(of: ",", with: "")) ?? 0.0) as Double,
+                "latitude":(Double(lat.replacingOccurrences(of: ",", with: "")) ?? 0.0) as Double
+            ] as [String : Any]
+        
+            print(newPoi)
+        
+            //add new data point, no error will occur, no try catch is needed in this operation with no specific document
+            db.collection("PointsOfInterest").addDocument(data: newPoi)
+            
+            
+            
+        
+            
+        
+        
+        
+    }
+    
+    func getDataFromName(pointName:String) async -> [String:Any]{
+        
+        let fs = Firestore.firestore()
+        
+        //query the database for anything matching what the user put for a name point,
+        //only return 1 thing from firebase, and convert it to this class values
+        
+        let dataPoint = fs.collection("PointsOfInterest").whereField("name", isEqualTo: pointName).limit(to: 1)
+        
+        //do - catch for async calls
+        var newPoiData:[String:Any] = [:]
+        
+        do{
+            
+            let dataSnapshot = try await dataPoint.getDocuments()
+            
+            //query snapshot is a array, so only get one item [0]
+            
+            let poIDocument = dataSnapshot.documents[0]
+            
+            //turn it into data and set class data
+            let poiData = poIDocument.data()
+            newPoiData = poiData
+            
+            
+            
+        }catch{
+            print("\(error) + An Error Has Occured Retrieving data")
+        }
+        
+        return newPoiData
+        
+    }
     
     
     func addData(dataToAdd:String) async{

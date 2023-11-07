@@ -29,7 +29,7 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
             
             //default value is
-            
+            let test = PointOfInterest()
             
             Text(uuID)
             
